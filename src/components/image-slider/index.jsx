@@ -32,7 +32,7 @@ const Slider = () => {
     <div className="mx-auto flex gap-2 h-[400px]">
       <div className="my-auto">
         <FaAngleLeft
-          className="h-[40px] w-[40px] hover:bg-[#666666] hover:cursor-pointer"
+          className="h-[40px] w-[40px] hover:cursor-pointer"
           onClick={() => handleChange(-1)}
         />
       </div>
@@ -50,7 +50,7 @@ const Slider = () => {
       </div>
       <div className="my-auto">
         <FaAngleRight
-          className="h-[40px] w-[40px] hover:bg-[#666666] hover:cursor-pointer"
+          className="h-[40px] w-[40px]  hover:cursor-pointer"
           onClick={() => handleChange(1)}
         />
       </div>
