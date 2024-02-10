@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { reactQuestions } from "./data";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+
 const Accordian = () => {
   // single select
   const [selected, setSelected] = useState(null);
@@ -48,7 +51,7 @@ const Accordian = () => {
         {reactQuestions &&
           reactQuestions.map((question) => (
             <div
-              className="flex flex-col items-center justify-center mb-[10px] px-[10px] py-[20px] bg-[#907618]"
+              className="flex flex-col items-center justify-center mb-[10px] px-[10px] py-[20px] bg-[#907618] rounded-lg"
               key={question.id}
             >
               <div
@@ -56,7 +59,7 @@ const Accordian = () => {
                 className="flex w-full text-white justify-between items-center cursor-pointer"
               >
                 <h3>{question.question}</h3>
-                <span>+</span>
+                <span>{selected === question.id || multiple?.includes(question.id) ? <IoIosArrowUp/> : <IoIosArrowDown/>}</span>
               </div>
               {enableMultiSelect ? (
 
