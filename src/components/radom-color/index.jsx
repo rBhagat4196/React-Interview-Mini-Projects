@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { CiMedicalClipboard } from "react-icons/ci";
+import { FaClipboardCheck } from "react-icons/fa6";
+
 
 const RandomColor = () => {
   const [type, setType] = useState("hex");
   const [color, setColor] = useState("#000000");
-
+  const [copy,setCopy] = useState(false);
   const generateColor = (type) => {
     if (type === "hex") {
       const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
@@ -25,9 +28,17 @@ const RandomColor = () => {
     console.log(color);
   };
 
+  const copyColor = ()=>{
+    setCopy(true)
+    navigator.clipboard.writeText(color);
+
+    setTimeout(()=>{
+      setCopy(false)
+    },2000);
+  }
   return (
     <div
-      className=" w-[500px] h-[400px] mx-auto mb-[10px]"
+      className=" w-[500px] h-[300px] mx-auto mb-[10px]"
       style={{
         background: color,
       }}
@@ -52,9 +63,12 @@ const RandomColor = () => {
           Random
         </button>
       </div>
-      <div className="bg-black/[0.7] rounded-md text-white p-2 flex justify-around w-[200px] mx-auto mt-[100px]">
+      <div className="bg-black/[0.7] rounded-md text-white p-2 flex justify-around w-[250px] mx-auto mt-[100px]">
         <h3>{type === "hex"? "HEX" : "RGB"}</h3>
         <h1>{color}</h1>
+        <div  className="cursor-pointer" onClick={copyColor}>
+        {copy ? <FaClipboardCheck className=" h-5 w-5"/> : <CiMedicalClipboard className=" h-5 w-5"/> }
+        </div>
       </div>
     </div>
   );
