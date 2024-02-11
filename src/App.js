@@ -9,6 +9,7 @@ import RandomColor from "./components/radom-color";
 import Rating from "./components/star-rating/Rating";
 import TreeView from "./components/tree-view";
 import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
+import CustomTab from "./components/custom-tab";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -25,6 +26,7 @@ function App() {
       <TreeView />
       <QrCodeGenerator theme={theme}/>
       <ToggleTheme theme={theme} setTheme={setTheme} />
+      <CustomTab/>
       <div className="mt-[10px]"></div>
     </div>
   );
