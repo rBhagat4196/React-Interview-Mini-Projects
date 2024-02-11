@@ -27,6 +27,10 @@ const AutoComplete = () => {
     name.toLowerCase().startsWith(inputValue.toLowerCase())
     ).slice(0,10);
     setSuggestions(filteredSuggestions);
+
+    if(inputValue.length === 0){
+        setSuggestions([])
+    }
   };
 
   const handleSuggestionClick = (suggestion) => {

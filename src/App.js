@@ -13,6 +13,7 @@ import CustomTab from "./components/custom-tab";
 import Popup from "./components/modal-popup";
 import GitHubProfileFinder from "./components/github-profile-finder";
 import AutoComplete from "./components/auto-complete";
+import TicTacToe from "./components/tic-tac-toe";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -34,6 +35,7 @@ function App() {
       <Popup theme={theme}/>
       <GitHubProfileFinder/>
       <AutoComplete/>
+      <TicTacToe theme={theme}/>
       <div className="h-[500px]"></div>
     </div>
   );

@@ -11,9 +11,9 @@ const ToggleTheme = ({theme,setTheme}) => {
       <button>
         {
             theme === "light" ? (
-                <FaSun className='w-20 h-20 text-white' onClick={()=>setTheme("dark")}/>
+                <FaMoon className='w-20 h-20 text-white' onClick={()=>setTheme("dark")}/>
             ):(
-                <FaMoon  className='w-20 h-20 text-white' onClick={()=>setTheme("light")}/>
+                <FaSun  className='w-20 h-20 text-white' onClick={()=>setTheme("light")}/>
             )
         }
       </button>
