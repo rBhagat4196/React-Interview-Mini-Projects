@@ -39,7 +39,7 @@ const Accordian = () => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-[10px]">
         <button
           className="w-[180px] text-white bg-blue-400 p-2 mb-[10px] rounded-md"
           onClick={changeSelect}

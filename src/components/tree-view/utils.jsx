@@ -22,7 +22,7 @@ export const Node = ({ data }) => {
         ...display,
         [currentLabel] : !display[currentLabel]
     })
-    console.log(display)
+    // console.log(display)
 }
 console.log(display)
   return (
