@@ -12,6 +12,7 @@ import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 import CustomTab from "./components/custom-tab";
 import Popup from "./components/modal-popup";
 import GitHubProfileFinder from "./components/github-profile-finder";
+import AutoComplete from "./components/auto-complete";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -19,6 +20,7 @@ function App() {
     <div
       className={`flex w-full min-w-[600px] flex-col gap-4 ${theme === "dark" ? "bg-black" : ""}`}
     >
+      <h1 className={`${theme==="dark" ? "text-white":""} p-4 text-center text-3xl font-mono `}>React Interview Problems</h1>
       <ScrollIndicator/>
       <Accordian />
       <RandomColor />
@@ -31,7 +33,8 @@ function App() {
       <CustomTab/>
       <Popup theme={theme}/>
       <GitHubProfileFinder/>
-      <div className="mt-[10px]"></div>
+      <AutoComplete/>
+      <div className="h-[500px]"></div>
     </div>
   );
 }
