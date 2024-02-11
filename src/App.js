@@ -14,7 +14,7 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
   return (
     <div
-      className={`flex flex-col gap-4 ${theme === "dark" ? "bg-black" : ""}`}
+      className={`flex w-full min-w-[600px] flex-col gap-4 ${theme === "dark" ? "bg-black" : ""}`}
     >
       <ScrollIndicator/>
       <Accordian />
@@ -23,7 +23,7 @@ function App() {
       <Slider />
       <LoadData />
       <TreeView />
-      <QrCodeGenerator />
+      <QrCodeGenerator theme={theme}/>
       <ToggleTheme theme={theme} setTheme={setTheme} />
       <div className="mt-[10px]"></div>
     </div>

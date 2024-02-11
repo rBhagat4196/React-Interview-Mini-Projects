@@ -10,6 +10,11 @@ const ScrollIndicator = () => {
       const scrollTop =  document.documentElement.scrollTop;
       const trackLength = documentHeight - windowHeight;
       const scrollPercentage = (scrollTop / trackLength) * 100;
+    //   console.log(windowHeight)
+    //   console.log(documentHeight)
+    //   console.log(scrollTop)
+    //   console.log(trackLength)
+    //   console.log(scrollPercentage)
       setScrollPercentage(scrollPercentage);
     };
 
