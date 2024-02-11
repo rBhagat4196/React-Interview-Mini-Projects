@@ -5,6 +5,7 @@ import Slider from './components/image-slider';
 import LoadData from './components/load-more';
 import RandomColor from './components/radom-color';
 import Rating from './components/star-rating/Rating';
+import TreeView from './components/tree-view';
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
       <Accordian/>
       <RandomColor/>
       <Rating
-      stars={7}
+      stars={10}
       />
       <Slider/>
       <LoadData/>
+      <TreeView/>
     </div>
   );
 }

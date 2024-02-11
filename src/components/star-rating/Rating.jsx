@@ -1,36 +1,38 @@
-import React, { useState } from 'react'
-import { FaStar } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa6';
 
-const Rating = ({stars=10}) => {
-  const [rating,setRating] = useState(0);
-  const [hover,setHover] = useState(0);
-  const handleClick = (currentIndex)=>{
-    setRating(currentIndex)
+const Rating = ({ stars = 10 }) => {
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+
+  const handleClick = (currentIndex) => {
+    setRating(currentIndex);
+  };
+
+  const handleMouseEnter = (currentIndex) => {
+    setHover(currentIndex);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(rating);
+  };
+
+  // Array to hold the JSX elements
+  const starComponents = [];
+
+  for (let index = 1; index <= stars; index++) {
+    starComponents.push(
+      <FaStar
+        key={index}
+        onClick={() => handleClick(index)}
+        onMouseEnter={() => handleMouseEnter(index)}
+        onMouseLeave={handleMouseLeave}
+        className={`h-8 w-8 ${index <= hover ? 'text-yellow-300' : ''}`}
+      />
+    );
   }
 
-  const handleMouseEnter = (currentIndex)=>{
-    setHover(currentIndex)
-  }
+  return <div className='flex justify-center gap-2'>{starComponents.map(star => star)}</div>;
+};
 
-  const handleMouseLeave = (currentIndex)=>{
-    setHover(rating)
-  }
-  return (
-    <div className='flex justify-center gap-2'>
-      {
-        [...Array(stars)].map((_,index)=>{
-            index += 1
-            return <FaStar
-            key={index}
-            onClick={()=>handleClick(index)}
-            onMouseEnter={()=>handleMouseEnter(index)}
-            onMouseLeave={()=>handleMouseLeave(index)}
-            className={`h-8 w-8 ${index <= hover ? "text-yellow-300" : ""}`}
-            />
-        })
-      }
-    </div>
-  )
-}
-
-export default Rating
+export default Rating;

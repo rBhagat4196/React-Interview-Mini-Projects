@@ -5,7 +5,7 @@ import { FaClipboardCheck } from "react-icons/fa6";
 
 const RandomColor = () => {
   const [type, setType] = useState("hex");
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState("#528CA2");
   const [copy,setCopy] = useState(false);
   const generateColor = (type) => {
     if (type === "hex") {
