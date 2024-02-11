@@ -8,6 +8,7 @@ import QrCodeGenerator from "./components/qr-code";
 import RandomColor from "./components/radom-color";
 import Rating from "./components/star-rating/Rating";
 import TreeView from "./components/tree-view";
+import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -15,6 +16,7 @@ function App() {
     <div
       className={`flex flex-col gap-4 ${theme === "dark" ? "bg-black" : ""}`}
     >
+      <ScrollIndicator/>
       <Accordian />
       <RandomColor />
       <Rating stars={10} />
