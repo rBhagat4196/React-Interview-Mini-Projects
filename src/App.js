@@ -10,6 +10,7 @@ import Rating from "./components/star-rating/Rating";
 import TreeView from "./components/tree-view";
 import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 import CustomTab from "./components/custom-tab";
+import Popup from "./components/modal-popup";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -27,6 +28,7 @@ function App() {
       <QrCodeGenerator theme={theme}/>
       <ToggleTheme theme={theme} setTheme={setTheme} />
       <CustomTab/>
+      <Popup theme={theme}/>
       <div className="mt-[10px]"></div>
     </div>
   );
