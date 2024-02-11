@@ -29,7 +29,7 @@ const Popup = ({theme}) => {
         <img alt="surprise" src={surpriseBox} className="w-80 h-80 mx-auto" />
       )}
       {modelOpen && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50  backdrop-blur-md">
+        <div className="z-[999999] fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50  backdrop-blur-md">
           <div className={`${theme==="dark"?"bg-gray-700 text-white":"bg-white"} rounded-lg p-8 flex flex-col gap-2`}>
             <h2 className="text-2xl font-bold mb-4">Surprise!</h2>
             <p>Here's your surprise...</p>
