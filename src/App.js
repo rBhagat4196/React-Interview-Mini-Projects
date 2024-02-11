@@ -11,6 +11,7 @@ import TreeView from "./components/tree-view";
 import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 import CustomTab from "./components/custom-tab";
 import Popup from "./components/modal-popup";
+import GitHubProfileFinder from "./components/github-profile-finder";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -29,6 +30,7 @@ function App() {
       <ToggleTheme theme={theme} setTheme={setTheme} />
       <CustomTab/>
       <Popup theme={theme}/>
+      <GitHubProfileFinder/>
       <div className="mt-[10px]"></div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import QRCode from "react-qr-code";
 
-const QrCodeGenerator = (theme) => {
+const QrCodeGenerator = ({theme}) => {
   console.log(theme)
   const [data,setData] = useState("")
   return (
@@ -10,7 +10,7 @@ const QrCodeGenerator = (theme) => {
 
       <form className=''>
 
-        <label className={`${theme==="dark" ? "text-white" : "" }text-xl font-semibold`}>
+        <label className={`${theme==="dark" ? "text-white" : "" } text-xl font-semibold`}>
           Enter Data
         </label>
         <input
