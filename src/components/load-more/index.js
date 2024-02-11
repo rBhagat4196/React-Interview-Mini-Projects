@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
-const LoadData = () => {
+const LoadData = ({theme}) => {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
 
@@ -31,6 +31,7 @@ const LoadData = () => {
             title={data.title}
             image={data.thumbnail}
             description={data.description}
+            theme={theme}
           />
         ))}
       </div>

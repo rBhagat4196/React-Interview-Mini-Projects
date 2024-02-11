@@ -27,7 +27,7 @@ function App() {
       <RandomColor />
       <Rating stars={10} />
       <Slider />
-      <LoadData />
+      <LoadData theme = {theme}/>
       <TreeView />
       <QrCodeGenerator theme={theme}/>
       <ToggleTheme theme={theme} setTheme={setTheme} />
