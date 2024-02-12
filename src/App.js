@@ -95,7 +95,7 @@ function App() {
 
       <ScrollIndicator />
       <div ref={AccordianRef}><Accordian /></div>
-      <div ref={ColorGeneratorRef}><RandomColor /></div>
+      <div ref={ColorGeneratorRef} ><RandomColor /></div>
       <div ref={RatingSystemRef}><Rating stars={10} /></div>
       <div ref={ImageCarouselRef} className="mx-auto"><Slider /></div>
       <div ref={DataFetchingRef}><LoadData theme={theme} /></div>

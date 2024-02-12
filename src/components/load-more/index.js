@@ -25,7 +25,7 @@ const LoadData = ({theme}) => {
 
   return (
     <>
-      <div className="grid grid-cols-3 w-[500px] gap-4 mx-auto">
+      <div className="mt-[20px] grid grid-cols-3 w-[500px] gap-4 mx-auto">
         {products.map((data, index) => (
           <Card
             key={index}
@@ -37,7 +37,7 @@ const LoadData = ({theme}) => {
         ))}
       </div>
       <div
-        className="mx-auto w-[100px] text-center border-2 rounded-lg bg-gradient-to-tr from-violet-400 to-red-500 to bg-pink-400 text-white p-1 border-violet-600 cursor-pointer"
+        className="mt-[10px] mb-[5px] mx-auto w-[100px] text-center border-2 rounded-lg bg-gradient-to-tr from-violet-400 to-red-500 to bg-pink-400 text-white p-1 border-violet-600 cursor-pointer"
         onClick={() => setCount(count + 1)}
       >
         Load More

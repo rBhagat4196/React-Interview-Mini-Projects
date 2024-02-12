@@ -38,7 +38,7 @@ const RandomColor = () => {
   }
   return (
     <div
-      className=" w-[500px] h-[300px] mx-auto mb-[10px]"
+      className="w-[500px] h-[300px] mx-auto mb-[10px] border-2"
       style={{
         background: color,
       }}
