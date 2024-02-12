@@ -79,12 +79,13 @@ function App() {
       >
         React Interview Problems
       </h1>
-      <div className="question-list max-w-md mx-auto mt-8">
+      <div className="question-list mx-auto mt-2">
         <h2 className={`text-3xl font-semibold mb-4 ${textColor}`}>List of Questions:</h2>
-        <ul className="divide-y divide-gray-200 flex flex-col gap-2">
+
+        <ul className="divide-y divide-gray-200 flex flex-col gap-2 w-[500px] ">
           {questions.map((question, index) => (
-            <li key={index} className={`py-4 text-white flex gap-8 bg-[#528CA2] p-3 rounded-3xl`}>
-              <span className="flex items-center justify-center">({index+1})</span>
+            <li key={index} className={`py-4 text-white flex gap-6 bg-[#528CA2] p-3 rounded-3xl`}>
+              <span className="flex items-center justify-center text-lg">{index+1}.</span>
               <p className="text-justify">{question.question}</p>
               <IoOpen className="w-8 h-8 shrink-0 mt-6 cursor-pointer" onClick={() => handleScrollToComponent(Refs[question.title])} />
             </li>
