@@ -2761,4 +2761,4 @@ function removeDuplicates(names){
 }
 
 export const names = removeDuplicates(rawData).sort();
-console.log(names)
+// console.log(names)
