@@ -9,7 +9,7 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 const TreeView = () => {
   const [show,setShow] = useState(false);
   return (
-    <div className='w-[500px] h-[563px] bg-black/[.8] mx-auto rounded-md border-4 border-white'>
+    <div className='w-[500px] h-[510px]  bg-black/[.8] mx-auto rounded-md border-4 border-white '>
       
       {show ? (
         <div className='flex'>
