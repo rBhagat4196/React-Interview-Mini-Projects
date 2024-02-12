@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import Accordian from "./components/accordian/Accordian";
 import ToggleTheme from "./components/change-theme";
@@ -18,27 +18,54 @@ import WindowResize from "./components/use-resize-hook";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
+  const bottomRef = useRef(null);
+  const handleScrollToTop = ()=>{
+    window.scrollTo({
+      top : 0,
+      left : 0,
+      behavior : "smooth"
+    })
+  }
+  const handleScrollToBottom =()=>{
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <div
-      className={`flex w-full min-w-[600px] flex-col gap-4 ${theme === "dark" ? "bg-black" : ""}`}
+      className={`flex w-full min-w-[600px] flex-col gap-4 ${
+        theme === "dark" ? "bg-black" : ""
+      }`}
     >
-      <h1 className={`${theme==="dark" ? "text-white":""} p-4 text-center text-3xl font-mono `}>React Interview Problems</h1>
-      <ScrollIndicator/>
+      <h1
+        className={`${
+          theme === "dark" ? "text-white" : ""
+        } p-4 text-center text-3xl font-mono cursor-pointer `}
+        onClick={handleScrollToBottom}
+      >
+        React Interview Problems
+      </h1>
+      <ScrollIndicator />
       <Accordian />
       <RandomColor />
       <Rating stars={10} />
       <Slider />
-      <LoadData theme = {theme}/>
+      <LoadData theme={theme} />
       <TreeView />
-      <QrCodeGenerator theme={theme}/>
+      <QrCodeGenerator theme={theme} />
       <ToggleTheme theme={theme} setTheme={setTheme} />
-      <CustomTab/>
-      <Popup theme={theme}/>
-      <GitHubProfileFinder/>
-      <AutoComplete/>
-      <TicTacToe theme={theme}/>
-      <WindowResize/>
-      <div className="h-[500px]"></div>
+      <CustomTab />
+      <Popup theme={theme} />
+      <GitHubProfileFinder />
+      <AutoComplete />
+      <TicTacToe theme={theme} />
+      <WindowResize />
+      <div className="mx-auto">
+        <button className="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-blue-600 focus:outline-none" onClick={handleScrollToTop}>
+          Scorll to Top
+        </button>
+      </div>
+      <div ref={bottomRef} className="h-[50px]"></div>
     </div>
   );
 }
