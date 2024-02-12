@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { names } from "./data";
+import useOutsideClick from "../modal-popup/use-outsideclick-hook";
 const AutoComplete = () => {
   const [query, setQuery] = useState("");
+  const [show,setShow] = useState(false)
 //   const [names, setNames] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+  const suggestionRef = useRef(null)
 
 //   useEffect(() => {
 //     const fetchNames = async () => {
@@ -39,6 +42,7 @@ const AutoComplete = () => {
     setSuggestions([]);
   };
 
+  useOutsideClick(suggestionRef,()=>setShow(false))
   return (
     <div className="w-[500px] mx-auto">
       <div className="relative">
@@ -47,10 +51,12 @@ const AutoComplete = () => {
           value={query}
           onChange={handleInputChange}
           placeholder="Auto Complete Search..."
+          onClick={()=>setShow(true)}
+        onFocus={()=>setShow(true)}
           className="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:border-blue-500"
         />
-        {suggestions.length > 0 && (
-          <ul className="absolute z-20 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
+        { show && suggestions.length > 0 && (
+          <ul className="absolute z-20 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg" ref = {suggestionRef}>
             {suggestions.map((suggestion, index) => (
               <li
                 key={index}
